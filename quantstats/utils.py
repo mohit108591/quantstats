@@ -740,8 +740,8 @@ def _prepare_returns(data, rf=0.0, nperiods=None, apply_rf=True):
 
     elif data.min() >= 0 and data.max() <= 1:
         _warnings.warn(
-            "Input values are nonnegative and bounded by 1; prices "
-            "and returns are ambiguous. Treating this input as "
+            f"Series {repr(data.name)} has nonnegative values bounded by 1; "
+            "prices and returns are ambiguous. Treating this series as "
             "returns without pct_change(). If these are prices, "
             "convert them to returns explicitly before analysis.",
             UserWarning,
